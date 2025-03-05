@@ -138,7 +138,9 @@
   .projetos {
     padding: 12px 0px;
     box-shadow: none;
+    margin-bottom: 32px;
   }
+
   .infos-projetos {
     padding: 0px 20px;
   }
@@ -164,5 +166,14 @@
 
   .img-site {
     background-position: center;
+  }
+
+  .duracao {
+    margin-bottom: 28px;
+  }
+
+  .projetos .lista-icones {
+    width: 50%;
+    margin-bottom: 60px;
   }
 }
