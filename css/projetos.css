@@ -15,11 +15,12 @@
 }
 
 .infos-projetos {
-  margin-bottom: 44px;
+  margin-bottom: 6px;
 }
 
 .infos-projetos p {
   max-width: 52ch;
+  display: none;
 }
 
 .grupo-projetos {
@@ -40,6 +41,12 @@
 .projetos .info-item {
   width: 220px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item .dados-item {
+  flex-grow: 1;
 }
 
 .info-item .btn-1 {
