@@ -3,18 +3,16 @@
   max-width: 1200px;
   padding-left: 20px;
   padding-right: 20px;
+  margin: 0 auto;
   padding-bottom: 20px;
   box-sizing: border-box;
-  margin: 0 auto;
 }
 
 .btn-1 {
   padding: 16px 0px;
   text-align: center;
   display: inline-block;
-
   border-radius: 12px;
-
   text-transform: uppercase;
   border: none;
   cursor: pointer;

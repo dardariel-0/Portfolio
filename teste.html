@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Header com Transição de Contração das Laterais</title>
+  <title>Header Simétrico e Centralizado</title>
   <style>
     * {
       margin: 0;
@@ -96,24 +96,29 @@
 
       if (scrollPosition > 200) {
         // Ativa o efeito após 200px de scroll
-        header.style.width = "70%"; // Reduz a largura para 90%
-        header.style.left = "15%"; // Ajusta a posição para centralizar
-        header.style.transform = "translateX(0)"; // Remove a transformação
-        header.style.backgroundColor = "rgba(255, 255, 255, 0.95)"; // Fundo branco com transparência
-        header.style.backdropFilter = "blur(10px)"; // Efeito de desfoque
-        header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)"; // Sombra suave
-        header.style.borderRadius = "50px"; // Bordas arredondadas
-        header.style.padding = "10px 20px"; // Padding ajustado
+        const maxWidth = 900; // Largura máxima do header
+        const screenWidth = window.innerWidth; // Largura da tela
+        const headerWidth = Math.min(screenWidth * 0.9, maxWidth); // Largura do header (90% da tela ou 900px)
+        const margin = (screenWidth - headerWidth) / 2; // Margem para centralização
+
+        header.style.width = `${headerWidth}px`; /* Define a largura do header */
+        header.style.left = `${margin}px`; /* Centraliza horizontalmente */
+        header.style.transform = "none"; /* Remove a transformação */
+        header.style.backgroundColor = "rgba(255, 255, 255, 0.95)"; /* Fundo branco com transparência */
+        header.style.backdropFilter = "blur(10px)"; /* Efeito de desfoque */
+        header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)"; /* Sombra suave */
+        header.style.borderRadius = "50px"; /* Bordas arredondadas */
+        header.style.padding = "10px 20px"; /* Padding ajustado */
       } else {
         // Retorna ao estado inicial
-        header.style.width = "100%"; // Largura total
-        header.style.left = "0"; // Posição inicial
-        header.style.transform = "translateX(0)"; // Sem transformação
-        header.style.backgroundColor = "transparent"; // Fundo transparente
-        header.style.backdropFilter = "none"; // Sem desfoque
-        header.style.boxShadow = "none"; // Sem sombra
-        header.style.borderRadius = "0"; // Sem bordas arredondadas
-        header.style.padding = "20px 40px"; // Padding inicial
+        header.style.width = "100%"; /* Largura total */
+        header.style.left = "0"; /* Posição inicial */
+        header.style.transform = "none"; /* Remove a transformação */
+        header.style.backgroundColor = "transparent"; /* Fundo transparente */
+        header.style.backdropFilter = "none"; /* Sem desfoque */
+        header.style.boxShadow = "none"; /* Sem sombra */
+        header.style.borderRadius = "0"; /* Sem bordas arredondadas */
+        header.style.padding = "20px 40px"; /* Padding inicial */
       }
     }
 
