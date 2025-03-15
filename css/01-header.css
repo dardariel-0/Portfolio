@@ -19,6 +19,10 @@
   /* Transição suave */
 }
 
+.button-menu {
+  display: none;
+}
+
 .header .link-header {
   display: flex;
   gap: 40px;
@@ -71,9 +75,27 @@
     padding: 20px 12px !important;
   }
 
-  .header.ativo .link-header {
-    display: flex;
-    gap: 10px;
-    display: none;
+  .header.ativo {
+    padding: 8px !important;
+
+    & .link-header {
+      display: flex;
+      gap: 10px;
+      display: none;
+    }
+
+    & .logo {
+      margin-left: 12px;
+    }
+
+    & .button-menu {
+      display: block;
+      width: 30px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    }
   }
 }
