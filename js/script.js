@@ -131,40 +131,58 @@ bgInterativo();
 
 //header animação
 
-const header = document.querySelector(".header");
+function headerSize() {
+  const header = document.querySelector(".header");
 
-function handleScroll() {
-  const scrollPosition = window.scrollY;
+  function handleScroll() {
+    const scrollPosition = window.scrollY;
 
-  if (scrollPosition > 320) {
-    // Ativa o efeito após 320px de scroll
-    const maxWidth = 800; // Largura máxima do header
-    const screenWidth = window.innerWidth; // Largura da tela
-    const headerWidth = Math.min(screenWidth * 0.9, maxWidth); // Largura do header (90% da tela ou 900px)
-    const margin = (screenWidth - headerWidth) / 2; // Margem para centralização
+    if (scrollPosition > 320) {
+      // Ativa o efeito após 320px de scroll
+      const maxWidth = 800; // Largura máxima do header
+      const screenWidth = window.innerWidth; // Largura da tela
+      const headerWidth = Math.min(screenWidth * 0.9, maxWidth); // Largura do header (90% da tela ou 900px)
+      const margin = (screenWidth - headerWidth) / 2; // Margem para centralização
 
-    header.style.width = `${headerWidth}px`; /* Define a largura do header */
-    header.style.left = `${margin}px`; /* Centraliza horizontalmente */
-    header.style.transform = "none"; /* Remove a transformação */
-    header.style.backgroundColor =
-      "rgba(255, 255, 255, 0.75)"; /* Fundo branco com transparência */
-    header.style.backdropFilter = "blur(10px)"; /* Efeito de desfoque */
-    header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)"; /* Sombra suave */
-    header.style.borderRadius = "50px"; /* Bordas arredondadas */
-    header.style.padding = "10px 20px"; /* Padding ajustado */
-    header.style.marginTop = "12px";
-  } else {
-    // Retorna ao estado inicial
-    header.style.width = "100%"; /* Largura total */
-    header.style.left = "0"; /* Posição inicial */
-    header.style.transform = "none"; /* Remove a transformação */
-    header.style.backgroundColor = "transparent"; /* Fundo transparente */
-    header.style.backdropFilter = "none"; /* Sem desfoque */
-    header.style.boxShadow = "none"; /* Sem sombra */
-    header.style.borderRadius = "0"; /* Sem bordas arredondadas */
-    header.style.padding = "20px 40px"; /* Padding inicial */
-    header.style.marginTop = "0px";
+      header.style.width = `${headerWidth}px`; /* Define a largura do header */
+      header.style.left = `${margin}px`; /* Centraliza horizontalmente */
+      header.style.transform = "none"; /* Remove a transformação */
+      header.style.backgroundColor =
+        "rgba(255, 255, 255, 0.85)"; /* Fundo branco com transparência */
+      header.style.backdropFilter = "blur(10px)"; /* Efeito de desfoque */
+      header.style.boxShadow =
+        "0 4px 12px rgba(0, 0, 0, 0.1)"; /* Sombra suave */
+      header.style.borderRadius = "50px"; /* Bordas arredondadas */
+      header.style.padding = "10px 20px"; /* Padding ajustado */
+      header.style.marginTop = "12px";
+    } else {
+      // Retorna ao estado inicial
+      header.style.width = "100%"; /* Largura total */
+      header.style.left = "0"; /* Posição inicial */
+      header.style.transform = "none"; /* Remove a transformação */
+      header.style.backgroundColor = "transparent"; /* Fundo transparente */
+      header.style.backdropFilter = "none"; /* Sem desfoque */
+      header.style.boxShadow = "none"; /* Sem sombra */
+      header.style.borderRadius = "0"; /* Sem bordas arredondadas */
+      header.style.padding = "20px 40px"; /* Padding inicial */
+      header.style.marginTop = "0px";
+    }
   }
+
+  window.addEventListener("scroll", handleScroll);
 }
 
-window.addEventListener("scroll", handleScroll);
+headerSize();
+
+///////////////////////////////
+
+// menu-mobile
+
+const botaoMenu = document.querySelector(".button-menu");
+const menuMobile = document.querySelector(".link-mobile");
+function ativarBotao() {
+  botaoMenu.classList.toggle("ativo");
+  menuMobile.classList.toggle("ativo");
+}
+
+botaoMenu.addEventListener("click", ativarBotao);
