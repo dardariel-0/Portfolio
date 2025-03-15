@@ -156,7 +156,6 @@ function headerSize() {
       menuMobile.style.borderRadius = "38px 38px 20px 20px";
       header.style.padding = "10px 20px"; /* Padding ajustado */
       header.style.marginTop = "12px";
-      header.style.color = "#7f92d8";
     } else {
       // Retorna ao estado inicial
       header.style.width = "100%"; /* Largura total */
@@ -169,7 +168,6 @@ function headerSize() {
       menuMobile.style.borderRadius = "0px 0px 20px 20px";
       header.style.padding = "20px 40px"; /* Padding inicial */
       header.style.marginTop = "0px";
-      header.style.color = "#fff";
     }
   }
 
@@ -188,11 +186,7 @@ const header = document.querySelector(".header");
 function ativarBotao() {
   botaoMenu.classList.toggle("ativo");
   menuMobile.classList.toggle("ativo");
-  if (menuMobile.classList.contains("ativo")) {
-    header.style.color = "#7f92d8";
-  } else {
-    header.style.color = "inherit";
-  }
+  header.classList.toggle("azul");
 }
 
 botaoMenu.addEventListener("click", ativarBotao);
