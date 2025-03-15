@@ -1,11 +1,13 @@
 :root {
   /* branco ao preto */
+  --cor-00: #fff;
   --cor-01: #f7f8fd;
   --cor-02: #eef1fc;
   --cor-03: #dde3f8;
   --cor-04: #b3c0ef;
   --cor-05: #9faee4; /*cor principal */
-  --cor-06: #7f92d8;
+  --cor-06: #7b8ac2;
+  /* --cor-06: #7f92d8; */
   --cor-07: #5d79de;
   --cor-08: #2442ae;
   --cor-09: #16296d;
@@ -25,6 +27,11 @@
   --cor-c9: #2e2e2e;
   --cor-c10: #0e0e0e;
 }
+
+.cor-00 {
+  color: var(--cor-00);
+}
+
 .cor-01 {
   color: var(--cor-01);
 }

@@ -183,10 +183,20 @@ headerSize();
 const botaoMenu = document.querySelector(".button-menu");
 const menuMobile = document.querySelector(".link-mobile");
 const header = document.querySelector(".header");
-function ativarBotao() {
+
+botaoMenu.onclick = function () {
   botaoMenu.classList.toggle("ativo");
   menuMobile.classList.toggle("ativo");
   header.classList.toggle("azul");
-}
+};
 
-botaoMenu.addEventListener("click", ativarBotao);
+document.onclick = function (evento) {
+  if (
+    !botaoMenu.contains(evento.target) &&
+    !menuMobile.contains(evento.target)
+  ) {
+    botaoMenu.classList.remove("ativo");
+    menuMobile.classList.remove("ativo");
+    header.classList.remove("azul");
+  }
+};
