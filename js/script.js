@@ -16,7 +16,7 @@ preventExternalLinks();
 ////////////////////////qqqq
 
 function mudarCorHeader() {
-  const headerBg = document.querySelector(".header-bg");
+  const header = document.querySelector(".header");
   const sectionA = document.getElementById("intro");
 
   function animaScroll() {
@@ -24,9 +24,9 @@ function mudarCorHeader() {
     const sectionBottom = sectionA.getBoundingClientRect().bottom;
 
     if (sectionTop < -380) {
-      headerBg.classList.add("ativo");
+      header.classList.add("ativo");
     } else if (sectionBottom > 60) {
-      headerBg.classList.remove("ativo");
+      header.classList.remove("ativo");
     }
   }
 
@@ -128,3 +128,37 @@ function bgInterativo() {
 }
 
 bgInterativo();
+
+//header animação
+
+const header = document.querySelector(".header");
+
+function handleScroll() {
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition > 320) {
+    // Ativa o efeito após 200px de scroll
+    header.style.width = "60%"; // Reduz a largura para 90%
+    header.style.left = "15%"; // Ajusta a posição para centralizar
+    header.style.transform = "translateX(0)"; // Remove a transformação
+    header.style.backgroundColor = "rgba(255, 255, 255, 0.8)"; // Fundo branco com transparência
+    header.style.backdropFilter = "blur(10px)"; // Efeito de desfoque
+    header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)"; // Sombra suave
+    header.style.borderRadius = "50px"; // Bordas arredondadas
+    header.style.padding = "16px 24px"; // Padding ajustado
+    header.style.marginTop = "12px";
+  } else {
+    // Retorna ao estado inicial
+    header.style.width = "100%"; // Largura total
+    header.style.left = "0"; // Posição inicial
+    header.style.transform = "translateX(0)"; // Sem transformação
+    header.style.backgroundColor = "transparent"; // Fundo transparente
+    header.style.backdropFilter = "none"; // Sem desfoque
+    header.style.boxShadow = "none"; // Sem sombra
+    header.style.borderRadius = "0"; // Sem bordas arredondadas
+    header.style.padding = "20px 40px"; // Padding inicial
+    header.style.marginTop = "0px";
+  }
+}
+
+window.addEventListener("scroll", handleScroll);

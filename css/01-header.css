@@ -12,6 +12,17 @@
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Transição suave */
 }
 
 .header .link-header {
@@ -24,6 +35,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   white-space: nowrap;
+  transition: color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .link-header a {
@@ -39,29 +51,17 @@
 
 /* HEADER 2 */
 
-.header-bg.ativo {
-  background-color: #fff;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  top: 20px;
-  max-width: 900px;
-  z-index: 300;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 100px;
+.header.ativo {
+  color: var(--cor-c9);
 }
 
-.header-bg.ativo .header {
-  color: var(--cor-c7);
-  gap: 80px;
+.header.ativo .link-header a {
+  box-shadow: inset 0 0 0 0 var(--cor-c5);
+}
 
-  & .link-header a {
-    box-shadow: inset 0 0 0 0 var(--cor-c5);
-  }
-
-  & .link-header a:hover {
-    color: #fff;
-    box-shadow: inset 200px 0 0 0 var(--cor-05);
-  }
+.header.ativo .link-header a:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 var(--cor-05);
 }
 
 .header .link-header {
