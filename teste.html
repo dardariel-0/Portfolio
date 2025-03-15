@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efeito Mousemove - Dots com Transição Suave</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200vh;
+      /* Criando scroll para testar */
+      background-color: black;
+      overflow-x: hidden;
+    }
+
+    .grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #00ff00;
+      border-radius: 50%;
+      transition: transform 0.2s ease-out, opacity 0.5s ease-in-out;
+      /* Transição suave */
+      position: absolute;
+      opacity: 0;
+      /* Dots invisíveis por padrão */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid"></div>
+
+  <script>
+    const grid = document.querySelector('.grid');
+    let dots = [];
+    let spacing = 24;
+    let mouseInside = false;
+    let maxDistance = 80; // Alcance do efeito
+    let mouseX = 0;
+    let mouseY = 0;
+
+    function createGrid() {
+      grid.innerHTML = "";
+      dots = [];
+      let cols = Math.floor(window.innerWidth / spacing);
+      let rows = Math.floor(window.innerHeight / spacing);
+
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          let dot = document.createElement('div');
+          dot.classList.add('dot');
+          dot.style.left = `${x * spacing}px`;
+          dot.style.top = `${y * spacing}px`;
+          grid.appendChild(dot);
+          dots.push({ element: dot, x: x * spacing, y: y * spacing });
+        }
+      }
+    }
+
+    function updateDots() {
+      dots.forEach(dot => {
+        let dist = Math.hypot(mouseX - dot.x, mouseY - dot.y);
+
+        if (dist < maxDistance) {
+          dot.element.style.opacity = "1"; // Mostra o dot
+          let size = Math.max(15 - dist / 10, 3);
+          dot.element.style.transform = `scale(${size / 4})`;
+        } else {
+          dot.element.style.opacity = "0"; // Esconde o dot com transição
+          dot.element.style.transform = `scale(1)`; // Reseta o tamanho
+        }
+      });
+    }
+
+    window.addEventListener("resize", createGrid);
+    createGrid();
+
+    grid.addEventListener('mouseenter', () => {
+      mouseInside = true;
+    });
+
+    grid.addEventListener('mouseleave', () => {
+      mouseInside = false;
+      dots.forEach(dot => {
+        dot.element.style.opacity = "0"; // Esconde todos os dots com transição
+        dot.element.style.transform = `scale(1)`; // Reseta o tamanho
+      });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!mouseInside) return;
+
+      mouseX = e.pageX;
+      mouseY = e.pageY;
+      updateDots();
+    });
+  </script>
+</body>
+
+</html>

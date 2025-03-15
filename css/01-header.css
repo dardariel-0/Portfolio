@@ -1,0 +1,69 @@
+/* HEADER NORMAL */
+
+.header-bg {
+  position: fixed;
+  width: 100%;
+  z-index: 300;
+}
+
+.header {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.header .link-header {
+  display: flex;
+  gap: 40px;
+  font-weight: 500;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.link-header a {
+  box-shadow: inset 0 0 0 0 var(--cor-05);
+  border-radius: 20px;
+  padding: 4px 12px;
+  transition: color 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+.link-header a:hover {
+  color: var(--cor-c7);
+  box-shadow: inset 200px 0 0 0 #fff;
+}
+
+/* HEADER 2 */
+
+.header-bg.ativo {
+  background-color: #fff;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 20px;
+  max-width: 900px;
+  z-index: 300;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+}
+
+.header-bg.ativo .header {
+  color: var(--cor-c7);
+  gap: 80px;
+
+  & .link-header a {
+    box-shadow: inset 0 0 0 0 var(--cor-c5);
+  }
+
+  & .link-header a:hover {
+    color: #fff;
+    box-shadow: inset 200px 0 0 0 var(--cor-05);
+  }
+}
+
+.header .link-header {
+  gap: 20px;
+}

@@ -57,3 +57,30 @@
 .btn-1:active {
   transform: scale(0.95);
 }
+
+/* bg interativo */
+
+.introducao {
+  overflow: hidden;
+  position: relative;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  transition: transform 0.2s ease-out, opacity 0.5s ease-in-out;
+  /* Transição suave */
+  opacity: 0;
+  /* Dots invisíveis por padrão */
+}

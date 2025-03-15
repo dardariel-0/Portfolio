@@ -6,7 +6,7 @@
   --cor-04: #b3c0ef;
   --cor-05: #9faee4; /*cor principal */
   --cor-06: #7f92d8;
-  --cor-07: #3155d5;
+  --cor-07: #5d79de;
   --cor-08: #2442ae;
   --cor-09: #16296d;
   --cor-10: #0d1941;
@@ -18,7 +18,7 @@
   --cor-c2: #ededed;
   --cor-c3: #dedede;
   --cor-c4: #cccccc;
-  --cor-c5: #b2b2b2;
+  --cor-c5: #b8b8b8;
   --cor-c6: #9c9c9c;
   --cor-c7: #717171;
   --cor-c8: #404040;
@@ -95,4 +95,9 @@
 }
 .cor-c10 {
   color: var(--cor-c10);
+}
+
+.introducao {
+  height: 500px;
+  background-image: linear-gradient(#b8b8b8, #95a4d8);
 }
