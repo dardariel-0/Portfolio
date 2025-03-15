@@ -133,6 +133,7 @@ bgInterativo();
 
 function headerSize() {
   const header = document.querySelector(".header");
+  const menuMobile = document.querySelector(".link-mobile");
 
   function handleScroll() {
     const scrollPosition = window.scrollY;
@@ -143,7 +144,6 @@ function headerSize() {
       const screenWidth = window.innerWidth; // Largura da tela
       const headerWidth = Math.min(screenWidth * 0.9, maxWidth); // Largura do header (90% da tela ou 900px)
       const margin = (screenWidth - headerWidth) / 2; // Margem para centralização
-
       header.style.width = `${headerWidth}px`; /* Define a largura do header */
       header.style.left = `${margin}px`; /* Centraliza horizontalmente */
       header.style.transform = "none"; /* Remove a transformação */
@@ -153,8 +153,10 @@ function headerSize() {
       header.style.boxShadow =
         "0 4px 12px rgba(0, 0, 0, 0.1)"; /* Sombra suave */
       header.style.borderRadius = "50px"; /* Bordas arredondadas */
+      menuMobile.style.borderRadius = "38px 38px 20px 20px";
       header.style.padding = "10px 20px"; /* Padding ajustado */
       header.style.marginTop = "12px";
+      header.style.color = "#7f92d8";
     } else {
       // Retorna ao estado inicial
       header.style.width = "100%"; /* Largura total */
@@ -164,8 +166,10 @@ function headerSize() {
       header.style.backdropFilter = "none"; /* Sem desfoque */
       header.style.boxShadow = "none"; /* Sem sombra */
       header.style.borderRadius = "0"; /* Sem bordas arredondadas */
+      menuMobile.style.borderRadius = "0px 0px 20px 20px";
       header.style.padding = "20px 40px"; /* Padding inicial */
       header.style.marginTop = "0px";
+      header.style.color = "#fff";
     }
   }
 
@@ -180,9 +184,15 @@ headerSize();
 
 const botaoMenu = document.querySelector(".button-menu");
 const menuMobile = document.querySelector(".link-mobile");
+const header = document.querySelector(".header");
 function ativarBotao() {
   botaoMenu.classList.toggle("ativo");
   menuMobile.classList.toggle("ativo");
+  if (menuMobile.classList.contains("ativo")) {
+    header.style.color = "#7f92d8";
+  } else {
+    header.style.color = "inherit";
+  }
 }
 
 botaoMenu.addEventListener("click", ativarBotao);
