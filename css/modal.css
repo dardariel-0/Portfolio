@@ -1,0 +1,160 @@
+/* MODAL */
+
+.button-modal,
+.button-modal2 {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  border-radius: 50%;
+  background-color: var(--cor-00);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button-modal2 {
+  box-shadow: none;
+  right: 24px;
+  bottom: 24px;
+}
+
+@media (max-width: 580px) {
+  .button-modal {
+    display: none;
+  }
+}
+
+.button-modal img {
+  width: 30px;
+  height: 30px;
+}
+
+.button-modal:hover {
+  transform: rotate(45deg);
+}
+
+/* //MODAL */
+
+.modal-bg {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+
+.modal-bg.ativo {
+  display: flex;
+}
+
+.modal {
+  background-color: var(--cor-00);
+  padding: 24px;
+  padding-top: 72px;
+  border-radius: 40px;
+  position: relative;
+  min-width: 180px;
+  display: flex;
+  gap: 28px;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--cor-c7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal h3 {
+  margin-bottom: 8px;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.ativo .modal {
+  animation: modal 0.3s forwards;
+}
+
+.opcoes {
+  display: flex;
+  font-size: 1rem;
+  gap: 80px;
+  padding: 16px 32px;
+  border: solid 1px var(--cor-c7);
+  border-radius: 0px 30px 30px 30px;
+  scrollbar-width: none;
+}
+
+.opcoes li {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  width: max-content;
+}
+
+.opcoes li label {
+  width: 100%;
+  cursor: pointer;
+}
+
+.opcoes label::before {
+  content: "◻︎";
+  display: inlabelne-block;
+  font-size: 1.2rem;
+  margin-right: 8px;
+  transition: 0.3s ease-out;
+}
+
+.opcoes label.ativo::before {
+  content: "⏹︎";
+}
+
+.opcoes label:hover::before {
+  content: "⏹︎";
+}
+
+.fechar {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.opcoes input[type="radio"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+@media (max-width: 450px) {
+  .modal {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 660px) {
+  .lang {
+    display: none;
+  }
+}

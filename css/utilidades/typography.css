@@ -19,6 +19,10 @@
   font: 400 0.875rem/1.2 "DM Sans", sans-serif;
 }
 
+.font-g1 {
+  font: 700 1rem/1.2 "DM Sans", sans-serif;
+}
+
 @media (max-width: 580px) {
   .font-t1 {
     margin-bottom: 10px;
