@@ -56,7 +56,7 @@
 /* HEADER 2 */
 
 .header.ativo {
-  color: var(--cor-06);
+  color: var(--cor-06) !important;
 }
 
 .header.ativo .link-header a {
@@ -80,6 +80,11 @@
   position: relative;
   z-index: 20;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: var(--cor-00);
+}
+
+.button-menu:active {
+  transform: scale(1.2);
 }
 
 .menuMobile {
@@ -129,21 +134,23 @@
     }
 
     & .button-menu {
-      display: block;
-      width: 30px;
-      padding: 8px 12px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       cursor: pointer;
-
-      & .icone {
-        width: 30px;
-        height: 30px;
-        margin-top: 4px;
-      }
     }
-
+    & .button-menu svg {
+      width: 30px;
+      height: 30px;
+      fill: currentColor !important;
+    }
     & .button-menu.ativo {
       transform: rotate(50deg);
+      color: var(--cor-06) !important;
     }
 
     & .menuMobile.ativo {

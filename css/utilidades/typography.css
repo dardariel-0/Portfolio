@@ -1,7 +1,6 @@
 /* font 1 */
 .font-t1 {
   font: 800 4rem/1.35 "DM Sans", sans-serif;
-  margin-bottom: 28px;
 }
 
 /* forma resumida e mais comum de escrever a fonte, seguir exatamente essa ordem: peso - tamanho/line height - fonte */

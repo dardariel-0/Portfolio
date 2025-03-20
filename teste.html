@@ -1,128 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Header Simétrico e Centralizado</title>
+  <title>Animação de Divs Quadradas e Redondas</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      height: 2000px;
-      /* Para permitir scroll */
-      font-family: Arial, sans-serif;
-    }
-
-    /* Header inicial */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 40px;
-      background-color: transparent;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Estilo base das divs */
+    .shape {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      margin: 10px;
+      display: inline-block;
+      transition: all 1s ease;
       /* Transição suave */
     }
 
-    .header .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #000;
-      transition: color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      /* Transição suave */
-    }
-
-    .header .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .header .nav-links a {
-      text-decoration: none;
-      color: #000;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: background-color 0.3s ease, color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      /* Transição suave */
-    }
-
-    .header .nav-links a:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-
-    /* Seção de introdução */
-    .intro {
-      height: 100vh;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      color: #333;
+    /* Classe para formato redondo */
+    .round {
+      border-radius: 50%;
+      background-color: #e74c3c;
     }
   </style>
 </head>
 
 <body>
-  <header class="header">
-    <div class="logo">Daniel F.</div>
-    <nav class="nav-links">
-      <a href="#stacks">Stacks</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+  <!-- Divs quadradas -->
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
 
-  <section class="intro">
-    Role a página para ver o efeito
-  </section>
+  <!-- Divs redondas (já começam com a classe .round) -->
+  <div class="shape round"></div>
+  <div class="shape round"></div>
 
   <script>
-    const header = document.querySelector(".header");
+    // Função para alternar o formato das divs
+    function toggleShape() {
+      // Seleciona todas as divs com a classe .shape
+      const shapes = document.querySelectorAll('.shape');
 
-    function handleScroll() {
-      const scrollPosition = window.scrollY;
+      // Garante que pelo menos uma div mude
+      let atLeastOneChanged = false;
 
-      if (scrollPosition > 200) {
-        // Ativa o efeito após 200px de scroll
-        const maxWidth = 900; // Largura máxima do header
-        const screenWidth = window.innerWidth; // Largura da tela
-        const headerWidth = Math.min(screenWidth * 0.9, maxWidth); // Largura do header (90% da tela ou 900px)
-        const margin = (screenWidth - headerWidth) / 2; // Margem para centralização
+      shapes.forEach(shape => {
+        // Aumenta a probabilidade de mudança para 70%
+        const shouldChange = Math.random() > 0.3; // 70% de chance de mudar
 
-        header.style.width = `${headerWidth}px`; /* Define a largura do header */
-        header.style.left = `${margin}px`; /* Centraliza horizontalmente */
-        header.style.transform = "none"; /* Remove a transformação */
-        header.style.backgroundColor = "rgba(255, 255, 255, 0.95)"; /* Fundo branco com transparência */
-        header.style.backdropFilter = "blur(10px)"; /* Efeito de desfoque */
-        header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)"; /* Sombra suave */
-        header.style.borderRadius = "50px"; /* Bordas arredondadas */
-        header.style.padding = "10px 20px"; /* Padding ajustado */
-      } else {
-        // Retorna ao estado inicial
-        header.style.width = "100%"; /* Largura total */
-        header.style.left = "0"; /* Posição inicial */
-        header.style.transform = "none"; /* Remove a transformação */
-        header.style.backgroundColor = "transparent"; /* Fundo transparente */
-        header.style.backdropFilter = "none"; /* Sem desfoque */
-        header.style.boxShadow = "none"; /* Sem sombra */
-        header.style.borderRadius = "0"; /* Sem bordas arredondadas */
-        header.style.padding = "20px 40px"; /* Padding inicial */
+        if (shouldChange) {
+          // Alterna entre as classes .shape e .round
+          shape.classList.toggle('round');
+          atLeastOneChanged = true; // Marca que pelo menos uma div mudou
+        }
+      });
+
+      // Se nenhuma div mudou, força uma mudança aleatória
+      if (!atLeastOneChanged) {
+        const randomIndex = Math.floor(Math.random() * shapes.length);
+        shapes[randomIndex].classList.toggle('round');
       }
     }
 
-    window.addEventListener("scroll", handleScroll);
+    // Executa a função a cada 4 segundos
+    setInterval(toggleShape, 4000);
   </script>
 </body>
 

@@ -14,9 +14,14 @@
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.button-modal:active,
+.button-modal2:active {
+  transform: scale(1.2);
+}
+
 .button-modal2 {
   box-shadow: none;
-  right: 24px;
+  right: 8px;
   bottom: 24px;
 }
 
@@ -111,22 +116,26 @@
 .opcoes li label {
   width: 100%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .opcoes label::before {
-  content: "◻︎";
-  display: inlabelne-block;
-  font-size: 1.2rem;
-  margin-right: 8px;
+  content: "";
+  background-image: url("/icones/notchecked.svg");
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
   transition: 0.3s ease-out;
 }
 
 .opcoes label.ativo::before {
-  content: "⏹︎";
+  background-image: url("/icones/checked.svg");
 }
 
 .opcoes label:hover::before {
-  content: "⏹︎";
+  background-image: url("/icones/checked.svg");
 }
 
 .fechar {
@@ -139,6 +148,11 @@
   right: 12px;
   font-size: 1rem;
   cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fechar:active {
+  transform: scale(1.2);
 }
 
 .opcoes input[type="radio"] {

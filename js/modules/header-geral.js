@@ -1,6 +1,7 @@
 export default function initHeaderSize() {
   const header = document.querySelector(".header");
   const menuMobile = document.querySelector(".menuMobile");
+  const buttonMenu = document.querySelector(".button-menu");
 
   function handleScroll() {
     const scrollPosition = window.scrollY;
@@ -20,9 +21,10 @@ export default function initHeaderSize() {
       header.style.boxShadow =
         "0 4px 12px rgba(0, 0, 0, 0.1)"; /* Sombra suave */
       header.style.borderRadius = "50px"; /* Bordas arredondadas */
-      menuMobile.style.borderRadius = "38px 38px 20px 20px";
+      menuMobile.style.borderRadius = "32px 32px 20px 20px";
       header.style.padding = "10px 0px"; /* Padding ajustado */
       header.style.marginTop = "0px";
+      buttonMenu.style.color = "#7b8ac2";
     } else {
       // Retorna ao estado inicial
       header.style.width = "100%"; /* Largura total */
@@ -35,6 +37,7 @@ export default function initHeaderSize() {
       menuMobile.style.borderRadius = "0px 0px 20px 20px";
       header.style.padding = "0px 20px"; /* Padding inicial */
       header.style.marginTop = "0px";
+      buttonMenu.style.color = "#fff";
     }
   }
 

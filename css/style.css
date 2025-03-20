@@ -1,10 +1,11 @@
 @import "/css/global/global.css";
 @import "/css/utilidades/colors.css";
-
 @import "/css/utilidades/typography.css";
-
 @import "/css/utilidades/components.css";
 
 @import "/css/01-header.css";
+
+@import "/css/03-stacks.css";
+@import "/css/04-projetos.css";
+
 @import "/css/modal.css";
-@import "/css/projetos.css";
