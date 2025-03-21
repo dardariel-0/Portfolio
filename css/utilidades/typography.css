@@ -1,6 +1,6 @@
 /* font 1 */
 .font-t1 {
-  font: 800 4rem/1.35 "DM Sans", sans-serif;
+  font: 800 3rem/1.35 "DM Sans", sans-serif;
 }
 
 /* forma resumida e mais comum de escrever a fonte, seguir exatamente essa ordem: peso - tamanho/line height - fonte */
@@ -11,7 +11,7 @@
 }
 
 .font-p {
-  font: 400 1rem/1.2 "DM Sans", sans-serif;
+  font: 400 1rem/1.35 "DM Sans", sans-serif;
 }
 
 .font-p2 {
