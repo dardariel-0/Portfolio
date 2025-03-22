@@ -103,8 +103,3 @@
 .cor-c10 {
   color: var(--cor-c10);
 }
-
-.introducao {
-  height: 500px;
-  background-image: linear-gradient(#b8b8b8, #95a4d8);
-}

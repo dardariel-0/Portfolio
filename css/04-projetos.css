@@ -1,17 +1,31 @@
 .projetos-bg {
   margin-top: 60px;
-  background: linear-gradient(#b8b8b8, #b4bcdd);
+  /* background: linear-gradient(#b8b8b8, #b4bcdd); */
   box-shadow: inset 0 132px var(--cor-00), inset 0 -132px var(--cor-00);
+  position: relative;
+  display: block;
+  padding-bottom: 120px;
+}
+
+.bg-interativo {
+  top: 112px;
+  height: 80%;
+  background-image: linear-gradient(#b8b8b8, #95a4d8);
+  position: absolute;
+  z-index: 1;
 }
 
 .projetos {
+  position: relative;
   background-color: var(--cor-00);
   padding: 12px 40px;
   padding-bottom: 40px;
   border-radius: 40px;
-  margin-bottom: 120px;
   display: grid;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  width: 100%;
+  height: max-content;
 }
 
 .projetos h1 {
