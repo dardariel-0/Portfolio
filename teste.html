@@ -4,64 +4,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid Responsivo</title>
+  <title>Flip Card Efeito CSS</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    /* Container principal do cartão */
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      /* Largura do cartão */
+      height: 200px;
+      /* Altura do cartão */
+      perspective: 1000px;
+      /* Define a perspectiva para o efeito 3D */
+      margin: 50px auto;
+      /* Centraliza o cartão na página */
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-auto-rows: minmax(0, auto);
-      /* Garante que as linhas fiquem uniformes */
-      gap: 1%;
-      width: 90%;
-      max-width: 900px;
-      height: 90vh;
-      /* Usa altura relativa para adaptação */
-      margin: 5vh auto;
-    }
-
-    .item {
-      background-color: lightgray;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2vw;
-      /* Texto se ajusta proporcionalmente */
-    }
-
-    .text-item {
-      grid-column: span 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: lightblue;
-      padding: 2%;
+    /* Container interno que faz a rotação */
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
       text-align: center;
-      font-size: 1.2vw;
+      transition: transform 0.6s;
+      /* Duração da animação */
+      transform-style: preserve-3d;
+      /* Mantém o efeito 3D */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Sombra opcional */
+    }
+
+    /* Efeito de rotação ao passar o mouse */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+      /* Gira 180 graus no eixo Y */
+    }
+
+    /* Estilos para a frente e o verso do cartão */
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      /* Esconde o verso durante a rotação */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      /* Bordas arredondadas */
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: white;
+    }
+
+    /* Estilo da frente do cartão */
+    .flip-card-front {
+      background-color: #4CAF50;
+      /* Cor de fundo */
+    }
+
+    /* Estilo do verso do cartão */
+    .flip-card-back {
+      background-color: #f44336;
+      /* Cor de fundo */
+      transform: rotateY(180deg);
+      /* Inicia virado */
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="text-item">
-      Trabalho com ferramentas como Figma para UX Design e prototipagem, além de HTML, CSS e JavaScript no Front-End.
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        Frente do Cartão
+      </div>
+      <div class="flip-card-back">
+        Verso do Cartão
+      </div>
     </div>
-    <div class="item">3</div>
-
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-    <div class="item">7</div>
-    <div class="item">8</div>
   </div>
 
 </body>
