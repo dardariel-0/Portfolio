@@ -221,11 +221,6 @@
   }
 }
 
-.contato {
-  height: 400px;
-  background-color: var(--cor-01);
-}
-
 @media (max-width: 1050px) {
   .experiencia {
     padding: 18px 20px;
@@ -308,6 +303,10 @@
 }
 
 @media (max-width: 660px) {
+  .sobre {
+    padding-bottom: 60px;
+  }
+
   .spotify-mobile {
     & .form01,
     & .form02,
@@ -323,6 +322,14 @@
       height: 52px;
       width: 52px;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .experiencia {
+    padding: 28px 0px;
+    gap: 40px;
+    box-shadow: none;
   }
 }
 
@@ -344,13 +351,13 @@
     & .form04,
     & .form05,
     & .form06 {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
     }
 
     & .spotify {
-      height: 40px;
-      width: 40px;
+      height: 42px;
+      width: 42px;
     }
   }
 }

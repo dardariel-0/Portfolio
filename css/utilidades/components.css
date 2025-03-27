@@ -8,20 +8,6 @@
   box-sizing: border-box;
 }
 
-.btn-1 {
-  padding: 16px 0px;
-  text-align: center;
-  display: inline-block;
-  border-radius: 12px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-}
-.btn-1:hover {
-  /* background: var(--cor-05); */
-  transition: 0.2s;
-}
-
 /* CSS */
 .btn-1 {
   padding: 16px 0px;

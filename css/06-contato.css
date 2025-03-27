@@ -1,0 +1,261 @@
+.contato-bg {
+  background-image: linear-gradient(#b8b8b8, #95a4d8);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* //FORM */
+
+.form-01 {
+  background-color: var(--cor-00);
+  display: grid;
+  padding: 40px;
+  border-radius: 12px;
+  gap: 16px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.form-01 label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.form-01 input[type="text"],
+.form-01 input[type="email"],
+.form-01 textarea {
+  font: 400 1rem/1.5 "DM Sans", sans-serif;
+  background-color: var(--cor-01);
+  border: 1px solid var(--cor-02);
+  padding: 12px;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-01 input[type="text"]:focus,
+.form-01 input[type="email"]:focus,
+.form-01 textarea:focus {
+  outline: none;
+  border-color: var(--cor-05);
+  background-color: var(--cor-00);
+  box-shadow: 0 0 0 2px #dde3f8;
+}
+
+/* //form button */
+
+.form-btn {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+
+  & .form01,
+  & .form02,
+  & .form03,
+  & .form04,
+  & .form05,
+  & .form06 {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    background-color: var(--cor-03);
+  }
+
+  & .form01 {
+    border-radius: 40px;
+    opacity: 0.1;
+  }
+
+  & .form02 {
+    border-radius: 24px;
+    opacity: 0.2;
+  }
+
+  & .form03 {
+    border-radius: 20px;
+    opacity: 0.3;
+  }
+
+  & .form04 {
+    border-radius: 18px;
+    opacity: 0.4;
+  }
+
+  & .form05 {
+    border-radius: 12px;
+    opacity: 0.6;
+  }
+
+  & .form06 {
+    border-radius: 8px;
+    opacity: 0.8;
+  }
+
+  & .btn-1 {
+    height: 52px;
+    padding: 0 36px;
+    white-space: nowrap;
+  }
+}
+
+/* form infos */
+
+.form-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+
+  & .info {
+    background-color: var(--cor-00);
+    padding: 8px 28px 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  ul {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    & li {
+      display: flex;
+      gap: 8px;
+
+      & img {
+        width: 24px;
+      }
+    }
+  }
+
+  & .espaco {
+    height: 219px;
+    width: 219px;
+    background-color: #8e9ac7;
+    box-shadow: inset 3px 3px 4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 960px) {
+  .form-btn .form01,
+  .form-btn .form02 {
+    display: none;
+  }
+}
+
+@media (max-width: 840px) {
+  .contato {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+    & .espaco {
+      display: none;
+    }
+  }
+  .form-btn .form01,
+  .form-btn .form02 {
+    display: block;
+  }
+}
+
+@media (max-width: 680px) {
+  .contato-bg {
+    background-color: var(--cor-05);
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .form-01 {
+    padding: 40px 20px;
+  }
+  .form-btn .form01,
+  .form-btn .form02 {
+    display: block;
+  }
+}
+
+@media (max-width: 580px) {
+  .form-01 {
+    padding: 40px 20px;
+  }
+  .form-btn .form01 {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .form-btn {
+    & .form01,
+    & .form02,
+    & .form03,
+    & .form04,
+    & .form05,
+    & .form06 {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: var(--cor-03);
+    }
+  }
+
+  .form-btn .btn-1 {
+    height: 52px;
+    padding: 0 26px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 512px) {
+  .form-btn {
+    & .form01,
+    & .form02,
+    & .form03,
+    & .form04,
+    & .form05,
+    & .form06 {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: var(--cor-03);
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .form-01 {
+    padding: 28px 20px;
+  }
+  .form-btn .btn-1 {
+    padding: 0 18px;
+  }
+
+  .form-info {
+    & .info {
+      padding: 8px 20px 32px 20px;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .form-btn {
+    place-content: end;
+    & .form01,
+    & .form02,
+    & .form03,
+    & .form04,
+    & .form05,
+    & .form06 {
+      display: none;
+    }
+    & .btn-1 {
+      padding: 0 36px;
+    }
+  }
+}
