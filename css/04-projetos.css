@@ -6,12 +6,9 @@
   padding-bottom: 100px;
 }
 
-.bg-interativo {
+.projetos-bg .bg-interativo {
   top: 112px;
   height: 1250px;
-  background-image: linear-gradient(#b8b8b8, #95a4d8);
-  position: absolute;
-  z-index: 1;
 }
 
 .projetos {
@@ -158,13 +155,17 @@
 @media (max-width: 580px) {
   .projetos-bg {
     margin-top: 10px;
-    padding-bottom: 28px;
+    padding-bottom: 10px;
   }
 
   .projetos {
     padding: 12px 0px;
     box-shadow: none;
     margin-bottom: 32px;
+  }
+
+  .projetos h1 {
+    margin-bottom: 0px;
   }
 
   .infos-projetos {

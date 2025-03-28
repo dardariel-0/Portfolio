@@ -60,6 +60,12 @@
   overflow: hidden;
 }
 
+.bg-interativo {
+  background-image: linear-gradient(#b8b8b8, #95a4d8);
+  position: absolute;
+  z-index: 1;
+}
+
 .dot {
   position: absolute;
   width: 8px;

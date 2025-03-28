@@ -326,8 +326,12 @@
 }
 
 @media (max-width: 500px) {
+  .sobre {
+    padding-bottom: 40px;
+  }
+
   .experiencia {
-    padding: 28px 0px;
+    padding: 28px 0px 0px 0px;
     gap: 40px;
     box-shadow: none;
   }
