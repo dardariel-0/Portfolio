@@ -1,9 +1,18 @@
 .contato-bg {
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 80px;
   position: relative;
   height: max-content;
 }
+
+/* ////////////////////distancia seções */
+
+@media (max-width: 440px) {
+  .contato-bg {
+    padding-top: 60px;
+  }
+}
+/* /////////// */
 
 .contato-bg .bg-interativo {
   top: 0;
@@ -180,7 +189,6 @@
 @media (max-width: 680px) {
   .contato-bg {
     background-color: var(--cor-05);
-    padding-top: 40px;
     padding-bottom: 40px;
   }
   .form-01 {
