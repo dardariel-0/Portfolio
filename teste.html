@@ -1,91 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flip Card Efeito CSS</title>
+  <title>Site com i18next</title>
   <style>
-    /* Container principal do cartão */
-    .flip-card {
-      background-color: transparent;
-      width: 300px;
-      /* Largura do cartão */
-      height: 200px;
-      /* Altura do cartão */
-      perspective: 1000px;
-      /* Define a perspectiva para o efeito 3D */
-      margin: 50px auto;
-      /* Centraliza o cartão na página */
-    }
-
-    /* Container interno que faz a rotação */
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.6s;
-      /* Duração da animação */
-      transform-style: preserve-3d;
-      /* Mantém o efeito 3D */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      /* Sombra opcional */
-    }
-
-    /* Efeito de rotação ao passar o mouse */
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-      /* Gira 180 graus no eixo Y */
-    }
-
-    /* Estilos para a frente e o verso do cartão */
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      /* Esconde o verso durante a rotação */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      /* Bordas arredondadas */
+    body {
       font-family: Arial, sans-serif;
-      font-size: 20px;
-      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
-    /* Estilo da frente do cartão */
-    .flip-card-front {
-      background-color: #4CAF50;
-      /* Cor de fundo */
-    }
-
-    /* Estilo do verso do cartão */
-    .flip-card-back {
-      background-color: #f44336;
-      /* Cor de fundo */
-      transform: rotateY(180deg);
-      /* Inicia virado */
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
+  <!-- Botões de troca de idioma -->
+  <button onclick="changeLanguage('pt')">Português</button>
+  <button onclick="changeLanguage('en')">English</button>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        Frente do Cartão
-      </div>
-      <div class="flip-card-back">
-        Verso do Cartão
-      </div>
-    </div>
-  </div>
+  <!-- Conteúdo traduzível -->
+  <h1 data-i18n="welcome"></h1>
+  <p data-i18n="description">Meu nome é Daniel</p>
+  <button data-i18n="button">projetos</button>
+  <button data-i18n="button2">projetos2</button>
+  <button data-i18n="button3">projetos3</button>
 
+
+  <!-- Carrega a biblioteca i18next via CDN -->
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+
+  <script>
+    // Configuração do i18next
+    i18next.init({
+      lng: 'pt', // Idioma padrão
+      debug: true,
+      resources: {
+        pt: {
+          translation: {
+            welcome: "Bem-vindo ao meu site!",
+            description: "Meu nome é Daniel",
+            button: "Projetos",
+            button2: "Projetos2",
+            button3: "Projetos3"
+          }
+        },
+        en: {
+          translation: {
+            welcome: "Welcome to my website!",
+            description: "My name is Daniel",
+            button: "Projects",
+            button2: "Projects2",
+            button3: "Projects3"
+          }
+        }
+      }
+    });
+
+    // Função para trocar idioma
+    function changeLanguage(lang) {
+      i18next.changeLanguage(lang, () => updateTexts());
+    }
+
+    // Atualiza todos os textos na página
+    function updateTexts() {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = i18next.t(key);
+      });
+    }
+
+    // Inicializa os textos ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => updateTexts());
+  </script>
 </body>
 
 </html>

@@ -31,14 +31,9 @@ export default function initModal() {
 
 const langPT = document.querySelector(".pt-br");
 const langEN = document.querySelector(".en-us");
-const paragrafos = document.querySelectorAll(".jsText");
 ///////////////////
 
 function mudarEN() {
-  paragrafos[0].innerHTML = "Mode";
-
-  paragrafos[1].innerHTML = "Language";
-
   langEN.classList.add("ativo");
   langPT.classList.remove("ativo");
 }
@@ -47,10 +42,6 @@ langEN.addEventListener("click", mudarEN);
 /////////////////////////////////
 
 function mudarPT() {
-  paragrafos[0].innerHTML = "Modo";
-
-  paragrafos[1].innerHTML = "Idioma";
-
   langPT.classList.add("ativo");
   langEN.classList.remove("ativo");
 }
