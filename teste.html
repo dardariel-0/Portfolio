@@ -4,26 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tema Claro/Escuro com Dois Botões</title>
+  <title>Checkboxes de Tema</title>
   <style>
     :root {
-      /* Variáveis padrão (tema claro) */
-      --bg-color: #f8f9fa;
-      --text-color: #212529;
-      --primary-color: #0d6efd;
-      --secondary-color: #6c757d;
-      --card-bg: #ffffff;
-      --card-border: #dee2e6;
+      /* Variáveis para tema claro (padrão) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --primary-color: #4285f4;
+      --card-bg: #f8f9fa;
+      --border-color: #dee2e6;
     }
 
     /* Tema escuro */
     [data-theme="dark"] {
-      --bg-color: #212529;
-      --text-color: #f8f9fa;
-      --primary-color: #0dcaf0;
-      --secondary-color: #adb5bd;
-      --card-bg: #2c3034;
-      --card-border: #495057;
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --primary-color: #8ab4f8;
+      --card-bg: #1e1e1e;
+      --border-color: #444;
     }
 
     body {
@@ -35,114 +33,106 @@
       transition: all 0.3s ease;
     }
 
-    .theme-buttons {
+    .theme-controls {
       position: fixed;
       top: 20px;
       right: 20px;
+      background-color: var(--card-bg);
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .theme-option {
       display: flex;
-      gap: 10px;
+      align-items: center;
+      margin: 5px 0;
     }
 
-    .theme-btn {
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s;
-      border: 2px solid var(--primary-color);
-    }
-
-    #light-btn {
-      background-color: #ffffff;
-      color: #212529;
-    }
-
-    #dark-btn {
-      background-color: #212529;
-      color: #ffffff;
-    }
-
-    .theme-btn.active {
-      background-color: var(--primary-color);
-      color: white;
+    .theme-option input {
+      margin-right: 8px;
     }
 
     .card {
       background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
       border-radius: 8px;
       padding: 20px;
-      margin: 20px 0;
+      margin: 60px 0 20px;
       max-width: 600px;
+      border: 1px solid var(--border-color);
     }
 
     h1 {
       color: var(--primary-color);
-      margin-top: 50px;
-    }
-
-    .current-theme {
-      color: var(--secondary-color);
-      font-style: italic;
     }
   </style>
 </head>
 
 <body>
-  <div class="theme-buttons">
-    <button id="light-btn" class="theme-btn active" onclick="setTheme('light')">Claro ☀️</button>
-    <button id="dark-btn" class="theme-btn" onclick="setTheme('dark')">Escuro 🌙</button>
+  <div class="theme-controls">
+    <div class="theme-option">
+      <input type="checkbox" id="light-theme" name="theme" onchange="setTheme('light')">
+      <label for="light-theme">Modo Claro</label>
+    </div>
+    <div class="theme-option">
+      <input type="checkbox" id="dark-theme" name="theme" onchange="setTheme('dark')">
+      <label for="dark-theme">Modo Escuro</label>
+    </div>
   </div>
 
   <div class="card">
-    <h1>Seletor de Tema</h1>
-    <p>Este exemplo mostra como implementar um seletor de tema com dois botões distintos.</p>
-    <p class="current-theme">Tema atual: <span id="theme-indicator">claro</span></p>
-
-    <h2>Vantagens desta abordagem:</h2>
+    <h1>Controle de Tema com Checkboxes</h1>
+    <p>Este exemplo mostra como usar checkboxes para selecionar o tema, com a marcação correta ao carregar a página.</p>
+    <p>O sistema considera:</p>
     <ul>
-      <li>Interface mais intuitiva com botões dedicados</li>
-      <li>Visualização imediata das opções disponíveis</li>
-      <li>Feedback visual claro do tema ativo</li>
-      <li>Fácil personalização</li>
+      <li>Preferência salva no localStorage</li>
+      <li>Configuração do sistema operacional</li>
+      <li>Alternância mútua entre as checkboxes</li>
     </ul>
   </div>
 
   <script>
     // Função para definir o tema
     function setTheme(theme) {
-      // Aplicar o tema no HTML
-      document.documentElement.setAttribute('data-theme', theme);
+      const html = document.documentElement;
 
-      // Atualizar o indicador de tema
-      document.getElementById('theme-indicator').textContent = theme;
+      // Aplicar o tema
+      html.setAttribute('data-theme', theme);
 
-      // Atualizar estado dos botões
-      const lightBtn = document.getElementById('light-btn');
-      const darkBtn = document.getElementById('dark-btn');
-
-      if (theme === 'light') {
-        lightBtn.classList.add('active');
-        darkBtn.classList.remove('active');
-      } else {
-        lightBtn.classList.remove('active');
-        darkBtn.classList.add('active');
-      }
+      // Atualizar checkboxes
+      document.getElementById('light-theme').checked = (theme === 'light');
+      document.getElementById('dark-theme').checked = (theme === 'dark');
 
       // Salvar preferência
       localStorage.setItem('theme', theme);
     }
 
-    // Carregar tema salvo ao iniciar
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      setTheme(savedTheme);
+    // Verificar tema ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-      // Opcional: respeitar preferência do sistema se não houver tema salvo
-      if (!localStorage.getItem('theme')) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) setTheme('dark');
+      // Determinar o tema inicial
+      let initialTheme = 'light';
+      if (savedTheme) {
+        initialTheme = savedTheme;
+      } else if (prefersDark) {
+        initialTheme = 'dark';
       }
+
+      // Aplicar o tema inicial
+      setTheme(initialTheme);
+
+      // Configurar os radios para alternância mútua
+      const radios = document.querySelectorAll('input[name="theme"]');
+      radios.forEach(radio => {
+        radio.addEventListener('change', function () {
+          if (this.checked) {
+            const theme = this.id === 'light-theme' ? 'light' : 'dark';
+            setTheme(theme);
+          }
+        });
+      });
     });
   </script>
 </body>

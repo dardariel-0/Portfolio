@@ -15,6 +15,18 @@ function setTheme(theme) {
     darkBtn.classList.add("active");
   }
 
+  // Atualizar checkboxes
+  const claro = document.querySelector(".light");
+  const escuro = document.querySelector(".dark");
+
+  if ((document.getElementById("light-btn").checked = theme === "light")) {
+    claro.classList.add("ativo");
+    escuro.classList.remove("ativo");
+  } else if ((document.getElementById("dark-btn").checked = theme === "dark")) {
+    escuro.classList.add("ativo");
+    claro.classList.remove("ativo");
+  }
+
   // Salvar preferência
   localStorage.setItem("theme", theme);
 }
