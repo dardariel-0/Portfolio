@@ -557,12 +557,12 @@
         <ul class="opcoes" id="opcoes-modo">
           <li>
             <input type="radio" id="light" name="modo">
-            <label class="light ativo" for="light">LIGHT</label>
+            <label class="light ativo" for="light" id="light-btn" onclick="setTheme('light')">LIGHT</label>
           </li>
 
           <li>
             <input type="radio" id="dark" name="modo">
-            <label class="dark" for="dark">DARK</label>
+            <label class="dark" for="dark" id="dark-btn" onclick="setTheme('dark')">DARK</label>
           </li>
         </ul>
       </div>
@@ -590,6 +590,8 @@
   <script type="module" src="/js/script.js"></script>
   <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
   <script src="/js/modules/idioma.js"></script>
+  <script src="/js/modules/theme.js"></script>
+
 
 
 

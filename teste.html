@@ -1,83 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site com i18next</title>
+  <title>Tema Claro/Escuro com Dois Botões</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
+    :root {
+      /* Variáveis padrão (tema claro) */
+      --bg-color: #f8f9fa;
+      --text-color: #212529;
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --card-bg: #ffffff;
+      --card-border: #dee2e6;
     }
 
-    button {
-      padding: 10px 20px;
-      margin: 10px;
+    /* Tema escuro */
+    [data-theme="dark"] {
+      --bg-color: #212529;
+      --text-color: #f8f9fa;
+      --primary-color: #0dcaf0;
+      --secondary-color: #adb5bd;
+      --card-bg: #2c3034;
+      --card-border: #495057;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .theme-buttons {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .theme-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
       cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: 2px solid var(--primary-color);
+    }
+
+    #light-btn {
+      background-color: #ffffff;
+      color: #212529;
+    }
+
+    #dark-btn {
+      background-color: #212529;
+      color: #ffffff;
+    }
+
+    .theme-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      margin-top: 50px;
+    }
+
+    .current-theme {
+      color: var(--secondary-color);
+      font-style: italic;
     }
   </style>
 </head>
 
 <body>
-  <!-- Botões de troca de idioma -->
-  <button onclick="changeLanguage('pt')">Português</button>
-  <button onclick="changeLanguage('en')">English</button>
+  <div class="theme-buttons">
+    <button id="light-btn" class="theme-btn active" onclick="setTheme('light')">Claro ☀️</button>
+    <button id="dark-btn" class="theme-btn" onclick="setTheme('dark')">Escuro 🌙</button>
+  </div>
 
-  <!-- Conteúdo traduzível -->
-  <h1 data-i18n="welcome"></h1>
-  <p data-i18n="description">Meu nome é Daniel</p>
-  <button data-i18n="button">projetos</button>
-  <button data-i18n="button2">projetos2</button>
-  <button data-i18n="button3">projetos3</button>
+  <div class="card">
+    <h1>Seletor de Tema</h1>
+    <p>Este exemplo mostra como implementar um seletor de tema com dois botões distintos.</p>
+    <p class="current-theme">Tema atual: <span id="theme-indicator">claro</span></p>
 
-
-  <!-- Carrega a biblioteca i18next via CDN -->
-  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <h2>Vantagens desta abordagem:</h2>
+    <ul>
+      <li>Interface mais intuitiva com botões dedicados</li>
+      <li>Visualização imediata das opções disponíveis</li>
+      <li>Feedback visual claro do tema ativo</li>
+      <li>Fácil personalização</li>
+    </ul>
+  </div>
 
   <script>
-    // Configuração do i18next
-    i18next.init({
-      lng: 'pt', // Idioma padrão
-      debug: true,
-      resources: {
-        pt: {
-          translation: {
-            welcome: "Bem-vindo ao meu site!",
-            description: "Meu nome é Daniel",
-            button: "Projetos",
-            button2: "Projetos2",
-            button3: "Projetos3"
-          }
-        },
-        en: {
-          translation: {
-            welcome: "Welcome to my website!",
-            description: "My name is Daniel",
-            button: "Projects",
-            button2: "Projects2",
-            button3: "Projects3"
-          }
-        }
+    // Função para definir o tema
+    function setTheme(theme) {
+      // Aplicar o tema no HTML
+      document.documentElement.setAttribute('data-theme', theme);
+
+      // Atualizar o indicador de tema
+      document.getElementById('theme-indicator').textContent = theme;
+
+      // Atualizar estado dos botões
+      const lightBtn = document.getElementById('light-btn');
+      const darkBtn = document.getElementById('dark-btn');
+
+      if (theme === 'light') {
+        lightBtn.classList.add('active');
+        darkBtn.classList.remove('active');
+      } else {
+        lightBtn.classList.remove('active');
+        darkBtn.classList.add('active');
+      }
+
+      // Salvar preferência
+      localStorage.setItem('theme', theme);
+    }
+
+    // Carregar tema salvo ao iniciar
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+
+      // Opcional: respeitar preferência do sistema se não houver tema salvo
+      if (!localStorage.getItem('theme')) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) setTheme('dark');
       }
     });
-
-    // Função para trocar idioma
-    function changeLanguage(lang) {
-      i18next.changeLanguage(lang, () => updateTexts());
-    }
-
-    // Atualiza todos os textos na página
-    function updateTexts() {
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        element.textContent = i18next.t(key);
-      });
-    }
-
-    // Inicializa os textos ao carregar a página
-    document.addEventListener('DOMContentLoaded', () => updateTexts());
   </script>
 </body>
 

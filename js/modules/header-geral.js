@@ -16,7 +16,7 @@ export default function initHeaderSize() {
       header.style.left = `${margin}px`; /* Centraliza horizontalmente */
       header.style.transform = "none"; /* Remove a transformação */
       header.style.backgroundColor =
-        "rgba(255, 255, 255, 0.85)"; /* Fundo branco com transparência */
+        "var(--cor-header1)"; /* Fundo branco com transparência */
       header.style.backdropFilter = "blur(10px)"; /* Efeito de desfoque */
       header.style.boxShadow =
         "0 4px 12px rgba(0, 0, 0, 0.1)"; /* Sombra suave */
@@ -24,7 +24,7 @@ export default function initHeaderSize() {
       menuMobile.style.borderRadius = "32px 32px 20px 20px";
       header.style.padding = "10px 0px"; /* Padding ajustado */
       header.style.marginTop = "0px";
-      buttonMenu.style.color = "#7b8ac2";
+      buttonMenu.style.color = "var(--cor-06)";
     } else {
       // Retorna ao estado inicial
       header.style.width = "100%"; /* Largura total */

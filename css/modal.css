@@ -7,7 +7,7 @@
   bottom: 16px;
   z-index: 20;
   border-radius: 50%;
-  background-color: var(--cor-00);
+  background-color: var(--bg-header-mobile);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   padding: 12px;
   cursor: pointer;

@@ -1,5 +1,10 @@
 :root {
-  /* branco ao preto */
+  /* cores pardao */
+  --cor-branca: #fff; /*imutavel*/
+  --cor-header1: rgba(255, 255, 255, 0.85);
+  --cor-header2: #7b8ac2;
+  --bg-header-mobile: #fff;
+
   --cor-00: #fff;
   --cor-01: #f7f8fd;
   --cor-02: #eef1fc;
@@ -15,10 +20,12 @@
   --cor-12: #040816;
   --cor-13: #090b07;
 
+  --degrade: linear-gradient(#b8b8b8, #95a4d8);
+
   --cor-c1: #f7f7f7;
   --cor-c2: #ededed;
   --cor-c3: #dedede;
-  --cor-c4: #cccccc;
+  --cor-c4: #d9d9d9;
   --cor-c5: #b8b8b8;
   --cor-c6: #9c9c9c;
   --cor-c7: #717171;
@@ -26,6 +33,21 @@
   --cor-c9: #2e2e2e;
   --cor-c10: #0e0e0e;
 }
+
+:root[data-theme="dark"] {
+  --cor-header1: rgba(14, 14, 14, 0.8);
+  --cor-header2: #fff;
+  --bg-header-mobile: #2e2e2e;
+
+  --cor-00: #232323;
+  --cor-06: #b3c0ef;
+  /* --cor-06: #4b5887; */
+
+  --cor-c4: #2e2e2e;
+  --degrade: linear-gradient(#404040, #7b8ac2);
+}
+
+/* //////////////////// */
 
 .cor-00 {
   color: var(--cor-00);

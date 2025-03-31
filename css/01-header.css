@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--cor-00);
+  color: var(--cor-branca);
   width: 100%;
   background-color: transparent;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -22,7 +22,7 @@
 }
 
 .header.azul {
-  color: var(--cor-06);
+  color: var(--cor-header2);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -56,7 +56,7 @@
 /* HEADER 2 */
 
 .header.ativo {
-  color: var(--cor-06) !important;
+  color: var(--cor-header2) !important;
 }
 
 .header.ativo .link-header a {
@@ -80,7 +80,7 @@
   position: relative;
   z-index: 20;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  color: var(--cor-00);
+  color: var(--cor-branca);
 }
 
 .button-menu:active {
@@ -95,9 +95,9 @@
   top: 0px;
   right: 0;
   left: 0;
-  background-color: var(--cor-00);
+  background-color: var(--bg-header-mobile);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  color: var(--cor-06);
+  color: var(--cor-header2);
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.5s ease-out, opacity 0.3s ease-in-out;
