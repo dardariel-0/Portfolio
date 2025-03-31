@@ -125,7 +125,7 @@
   height: 172px;
   width: 172px;
   border-radius: 12px;
-  background-color: var(--cor-01);
+  background-color: var(--espaco2);
   box-shadow: inset 3px 3px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -145,6 +145,7 @@
 }
 
 .experiencia {
+  background-color: var(--bg-projeto);
   padding: 18px 28px;
   border-radius: 12px;
   display: grid;
@@ -198,7 +199,7 @@
   }
 
   & .emBranco {
-    background-color: var(--cor-01);
+    background-color: var(--espaco);
     box-shadow: inset 2px 2px 3px 0px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
   }
@@ -214,6 +215,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  background-color: var(--cor-00);
 
   & .curso {
     margin-bottom: 4px;
@@ -353,6 +355,11 @@
     padding: 28px 0px 0px 0px;
     gap: 40px;
     box-shadow: none;
+    background-color: var(--cor-00);
+  }
+
+  .exp-item {
+    background-color: var(--bg-projeto);
   }
 }
 
