@@ -26,6 +26,9 @@
   width: 100%;
   height: max-content;
   position: relative;
+  & h1 {
+    margin-bottom: 12px;
+  }
 }
 
 /* //FORM */

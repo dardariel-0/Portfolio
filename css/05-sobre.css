@@ -233,10 +233,9 @@
     font-size: 0.8rem;
   }
 
-  & .duracao span {
+  & .duracao .separador {
     height: 2px;
     width: 10%;
-    background-color: var(--cor-05);
   }
 }
 

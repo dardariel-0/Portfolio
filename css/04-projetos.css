@@ -111,7 +111,7 @@
   color: var(--cor-c7);
 }
 
-.duracao span {
+.duracao .separador {
   height: 2px;
   width: 24px;
   background-color: var(--cor-05);
