@@ -4,11 +4,10 @@
 @import "/css/utilidades/components.css";
 
 @import "/css/01-header.css";
-
+@import "/css/02.intro.css";
 @import "/css/03-stacks.css";
 @import "/css/04-projetos.css";
 @import "/css/05-sobre.css";
 @import "/css/06-contato.css";
 @import "/css/07-footer.css";
-
-@import "/css/modal.css";
+@import "/css/08-modal.css";

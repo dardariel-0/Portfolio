@@ -44,13 +44,6 @@
 
 /* bg interativo */
 
-.introducao {
-  overflow: hidden;
-  position: relative;
-  height: 500px;
-  background-image: var(--degrade);
-}
-
 .grid {
   position: absolute;
   top: 0;

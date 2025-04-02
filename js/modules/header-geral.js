@@ -51,7 +51,7 @@ export default function initHeaderSize() {
       const sectionTop = sectionA.getBoundingClientRect().top;
       const sectionBottom = sectionA.getBoundingClientRect().bottom;
 
-      if (sectionTop < -380) {
+      if (sectionTop < -320) {
         header.classList.add("ativo");
       } else if (sectionBottom > 60) {
         header.classList.remove("ativo");

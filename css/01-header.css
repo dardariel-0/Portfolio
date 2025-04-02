@@ -40,6 +40,7 @@
   white-space: nowrap;
   transition: color 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 10;
+  cursor: pointer;
 }
 
 .link-header a {
@@ -144,8 +145,8 @@
       cursor: pointer;
     }
     & .button-menu svg {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       fill: currentColor !important;
     }
     & .button-menu.ativo {

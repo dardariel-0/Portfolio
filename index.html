@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
 
-  <title>Portfolio</title>
+  <title>Daniel Ferreira - Portfolio</title>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
         <li><a href="#stacks">Stacks</a></li>
         <li><a href="#projetos" data-i18n="projetos">Projetos</a></li>
       </ul>
-      <span class="logo">Daniel</span>
+      <a class="logo" href="#intro">Daniel</a>
       <ul class="link-header">
         <li><a href="#sobre" data-i18n="sobre">Sobre</a></li>
         <li><a href="#contato" data-i18n="contato">Contato</a></li>
@@ -48,10 +49,15 @@
   <button class="button-modal" data-modal='abrir'><img src="/icones/engine.svg" alt=""></button>
 
   <section class="introducao" id="intro">
+    <picture class="logo-intro">
+      <svg width="40" height="50" viewBox="0 0 40 50" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M38.0645 27.4892H39.7849C39.7849 26.6234 40 25.7576 40 24.8918C40 21.645 39.1398 18.6147 37.8495 16.0173H36.129C36.9892 17.5325 37.4194 19.0476 37.8495 20.7792H27.957C24.086 20.7792 21.0753 17.7489 21.0753 13.8528V6.70996C25.8065 6.92641 30.1075 9.09091 33.3333 12.3377H35.4839C32.043 8.22511 26.8817 5.41126 21.0753 5.19481V0H18.9247V4.97835C13.1183 5.41126 7.95699 8.00866 4.51613 12.3377H6.66667C9.67742 9.09091 13.9785 6.92641 18.9247 6.70996V13.8528C18.9247 17.7489 15.914 20.7792 12.043 20.7792H2.15054C2.58064 19.0476 3.22581 17.5325 3.87097 16.0173H2.15054C0.860215 18.6147 0 21.645 0 24.8918C0 25.7576 0 26.6234 0.215054 27.4892H1.93548C1.72043 26.6234 1.72043 25.7576 1.72043 24.8918C1.72043 24.026 1.72043 23.3766 1.93548 22.5108H12.043C15.914 22.5108 19.1398 25.7576 19.1398 29.6537V43.29C11.6129 42.8571 5.37634 38.0952 3.01075 31.3853H1.07527C3.65591 38.961 10.5376 44.5887 18.9247 45.0216V50H20.8602V45.0216C29.2473 44.5887 36.129 38.961 38.7097 31.3853H36.9892C34.4086 38.0952 28.172 42.8571 20.8602 43.29V29.6537C20.8602 25.7576 24.086 22.5108 27.957 22.5108H38.0645C38.0645 23.1602 38.2796 24.026 38.2796 24.8918C38.2796 25.974 38.2796 26.8398 38.0645 27.4892Z" fill="currentColor" />
+      </svg>
+    </picture>
     <div class="grid"></div>
   </section>
 
-  <article class="stacks-bg" id="stacks">
+  <section class="stacks-bg" id="stacks">
     <div class="stacks container">
       <div class="stack-item emBranco grid-mobile1">
         <div></div>
@@ -95,9 +101,9 @@
         <div class="stackShape emBranco round"></div>
       </div>
     </div>
-  </article>
+  </section>
 
-  <article class="projetos-bg" id="projetos">
+  <section class="projetos-bg" id="projetos">
     <div class="projetos container">
 
       <section class="infos-projetos">
@@ -283,9 +289,9 @@
 
     </div>
     <div class="grid bg-interativo"></div>
-  </article>
+  </section>
 
-  <article class="container sobre" id="sobre">
+  <section class="container sobre" id="sobre">
 
 
     <div class="profile">
@@ -416,9 +422,9 @@
         </div>
       </div>
     </article>
-  </article>
+  </section>
 
-  <article class="contato-bg" id="contato">
+  <section class="contato-bg" id="contato">
     <div class=" contato container">
 
       <form class="form-01" action="./contato.html">
@@ -478,7 +484,7 @@
 
     </div>
     <div class="grid bg-interativo"></div>
-  </article>
+  </section>
 
   <footer class="container footer">
     <div class="footer-info">
@@ -537,20 +543,14 @@
       </div>
 
       <picture class="simbolo">
-        <svg class="icone" width="193" height="247" viewBox="0 0 193 247" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M97.0216 34.5315C122.059 34.5315 145.011 44.9956 160.659 61.7382H171.092C153.357 39.7635 126.232 26.1602 97.0216 26.1602C66.7675 26.1602 40.6864 39.7635 22.9513 61.7382H33.3837C49.0324 44.9956 71.9837 34.5315 97.0216 34.5315Z" fill="currentColor" />
-          <path d="M8.34595 123.477C8.34595 107.78 12.5189 93.1307 19.8216 80.5737H10.4324C4.17297 93.1307 0 107.78 0 123.477C0 127.662 0 131.848 1.04324 136.034H9.38919C8.34595 131.848 8.34595 127.662 8.34595 123.477Z" fill="currentColor" />
-          <path d="M97.0216 212.422C58.4216 212.422 26.0811 188.354 13.5621 153.823H5.21619C17.7351 192.54 54.2486 219.747 97.0216 219.747C139.795 219.747 175.265 191.494 188.827 153.823H180.481C166.919 188.354 134.578 212.422 97.0216 212.422Z" fill="currentColor" />
-          <path d="M185.697 123.477C185.697 127.662 185.697 131.848 184.654 136.034H193C193 131.848 194.043 127.662 194.043 123.477C194.043 107.78 189.87 93.1307 183.611 80.5737H175.265C181.524 93.1307 185.697 107.78 185.697 123.477Z" fill="currentColor" />
-          <path d="M189.87 100.456H134.578C117.886 100.456 104.324 86.8523 104.324 70.1097V0H89.7189V70.1097C89.7189 86.8523 76.1568 100.456 59.4649 100.456H2.08649L0 115.105H57.3784C75.1135 115.105 88.6757 129.755 88.6757 146.498V246.954H104.324V146.498C104.324 128.709 118.93 115.105 135.622 115.105H193L189.87 100.456Z" fill="currentColor" />
+        <svg width="40" height="50" viewBox="0 0 40 50" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M38.0645 27.4892H39.7849C39.7849 26.6234 40 25.7576 40 24.8918C40 21.645 39.1398 18.6147 37.8495 16.0173H36.129C36.9892 17.5325 37.4194 19.0476 37.8495 20.7792H27.957C24.086 20.7792 21.0753 17.7489 21.0753 13.8528V6.70996C25.8065 6.92641 30.1075 9.09091 33.3333 12.3377H35.4839C32.043 8.22511 26.8817 5.41126 21.0753 5.19481V0H18.9247V4.97835C13.1183 5.41126 7.95699 8.00866 4.51613 12.3377H6.66667C9.67742 9.09091 13.9785 6.92641 18.9247 6.70996V13.8528C18.9247 17.7489 15.914 20.7792 12.043 20.7792H2.15054C2.58064 19.0476 3.22581 17.5325 3.87097 16.0173H2.15054C0.860215 18.6147 0 21.645 0 24.8918C0 25.7576 0 26.6234 0.215054 27.4892H1.93548C1.72043 26.6234 1.72043 25.7576 1.72043 24.8918C1.72043 24.026 1.72043 23.3766 1.93548 22.5108H12.043C15.914 22.5108 19.1398 25.7576 19.1398 29.6537V43.29C11.6129 42.8571 5.37634 38.0952 3.01075 31.3853H1.07527C3.65591 38.961 10.5376 44.5887 18.9247 45.0216V50H20.8602V45.0216C29.2473 44.5887 36.129 38.961 38.7097 31.3853H36.9892C34.4086 38.0952 28.172 42.8571 20.8602 43.29V29.6537C20.8602 25.7576 24.086 22.5108 27.957 22.5108H38.0645C38.0645 23.1602 38.2796 24.026 38.2796 24.8918C38.2796 25.974 38.2796 26.8398 38.0645 27.4892Z" fill="currentColor" />
         </svg>
-
       </picture>
     </div>
     <span class="font-p2" data-i18n="rights">Todos os direitos reservados.</span>
 
   </footer>
-
 
 
   <section class="modal-bg" data-modal="container">
