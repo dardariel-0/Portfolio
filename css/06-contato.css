@@ -124,9 +124,21 @@
 
   & .btn-1 {
     height: 52px;
-    padding: 0 36px;
+    /* width: 225px; */
+    flex: 1;
+    padding: 0 28px;
     white-space: nowrap;
   }
+}
+
+.enviado {
+  background-image: linear-gradient(
+    to right,
+    #b3e690,
+    #9fd485,
+    #7bb063,
+    #9fd485
+  );
 }
 
 /* form infos */
