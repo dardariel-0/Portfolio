@@ -26,6 +26,7 @@
   --cor-13: #090b07;
 
   --degrade: linear-gradient(#b8b8b8, #95a4d8);
+  --degrade2: linear-gradient(45deg, #7b8ac2 0%, #b8b8b8 100%);
 
   --cor-c1: #f7f7f7;
   --cor-c2: #ededed;
@@ -59,6 +60,8 @@
   --cor-07: #505568;
 
   /* --cor-06: #4b5887; */
+
+  --degrade2: linear-gradient(45deg, #4b5887 0%, #9c9c9c 100%);
 
   --cor-c4: #2e2e2e;
   --cor-c7: #dedede;

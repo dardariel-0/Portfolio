@@ -1,5 +1,5 @@
 export default function preventExternalLinks() {
-  const btns = document.querySelectorAll(".projetos a");
+  const btns = document.querySelectorAll(".jsLink a");
 
   function prevent(evento) {
     evento.preventDefault(); // Prevents default button behavior

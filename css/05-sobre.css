@@ -24,51 +24,18 @@
 }
 /* //card */
 
-.flip-card {
-  background-color: transparent;
+.photo {
+  background-image: var(--degrade2);
   max-width: 360px;
   height: 435px;
-  perspective: 1000px;
   border-radius: 12px;
   overflow: hidden;
 }
 
-/* Container interno que faz a rotação */
-.flip-card-inner {
-  position: relative;
+.photo img {
   width: 100%;
   height: 100%;
-  transition: transform 0.5s;
-  /* Duração da animação */
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/*frente e o verso do cartão */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  /* Esconde o verso durante a rotação */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-.flip-card img {
-  height: 100%;
-  width: 100%;
-  border-radius: 12px;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
+  filter: drop-shadow(6px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 /* ////////// */
