@@ -1,0 +1,73 @@
+.container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* CSS */
+.btn-1 {
+  padding: 16px 0px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  background-size: 200% auto;
+  color: var(--cor-branca);
+  font-weight: 700;
+  background-size: 300% 100%;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    #b3c0ef,
+    #9faee4,
+    #7b8ac2,
+    #9faee4
+  );
+  touch-action: manipulation;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-1:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-1:active {
+  transform: scale(0.95);
+}
+
+/* bg interativo */
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-interativo {
+  background-image: var(--degrade);
+  position: absolute;
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--cor-c4);
+  border-radius: 50%;
+  transition: transform 0.2s ease-out, opacity 0.5s ease-in-out;
+  will-change: opacity, transform;
+  /* Transição suave */
+  opacity: 0;
+  /* Dots invisíveis por padrão */
+}

@@ -1,0 +1,18 @@
+.introducao {
+  position: relative;
+  background-image: var(--degrade);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.introducao .logo-intro {
+  color: var(--cor-c4);
+
+  & svg {
+    width: 150px;
+    height: 186px;
+  }
+}
