@@ -1,6 +1,6 @@
 // Configuração do i18next
 i18next.init({
-  lng: "pt", // Idioma padrão
+  lng: navigator.language.startsWith("en") ? "en" : "pt",
   debug: true,
   resources: {
     pt: {

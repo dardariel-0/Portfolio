@@ -46,6 +46,17 @@ export default function initModal() {
   }
   langPT.addEventListener("click", mudarPT);
 
+  ///////
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateTexts();
+    if (i18next.language === "en") {
+      mudarEN();
+    } else {
+      mudarPT();
+    }
+  });
+
   ///////////////////////////////////////
 
   // MODO CLARO E ESCURO
